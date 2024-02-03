@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ReactComponent as LogoIcon } from "icons/logo.svg";
+import styled from "styled-components";
+import DonationBox from "./components/DonationBox/";
+
+const Header = styled.header`
+  background-color: #fff;
+  padding: 24px 40px;
+`;
+
+const Main = styled.main`
+  background-color: var(--blue-grey-color);
+  display: flex;
+  justify-content: center;
+  padding-top: 64px;
+  height: 100vh;
+`;
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header>
+        <LogoIcon height={32} />
+      </Header>
+      <Main>
+        <DonationBox />
+      </Main>
     </div>
   );
 }
